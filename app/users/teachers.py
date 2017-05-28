@@ -1,8 +1,8 @@
+#-*- coding: UTF-8 -*-
 from flask import request, jsonify
-from app.models import *
-from app.auth import auth
+from app.users import users
 
-@auth.route('/apidemo', methods=['GET', 'POST'])
+@users.route('/add', methods=['GET', 'POST'])
 def apidemo():
     """一个返回JSON数据接口的设计示例"""
 
