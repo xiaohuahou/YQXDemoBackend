@@ -14,7 +14,8 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     MONGODB_URI = os.environ.get('DEV_DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
+        'mongodb://localhost:27017'
+    MONGOALCHEMY_DATABASE = 'news'
 
 class TestingConfig(Config):
     TESTING = True
