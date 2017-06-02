@@ -3,11 +3,11 @@ from flask import request, jsonify
 from app.classes import classes
 import json
 
-@classes.route('/api/v1/class', methods=['GET'])
+@classes.route('/classes', methods=['GET'])
 def getClass():
     pass
 
-@classes.route('/api/v1/class', methods=['POST'])
+@classes.route('/classes', methods=['POST'])
 def addClass():
     """一个返回JSON数据接口的设计示例"""
 
@@ -17,6 +17,6 @@ def addClass():
     response = jsonify(jsonResponse)
     return response
 
-@classes.route('/api/v1/class', methods=['PUT'])
+@classes.route('/classes', methods=['PUT'])
 def editClass():
     pass

@@ -12,11 +12,13 @@ def create_app(config_name):
 
     # 注册蓝本
     # 增加auth蓝本
+
+    URL_PREFIX = '/api/v1'
     from app.users import users as users_blueprint
-    app.register_blueprint(users_blueprint, url_prefix='/users')
+    app.register_blueprint(users_blueprint, url_prefix=URL_PREFIX)
 
     from app.classes import classes as classes_blueprint
-    app.register_blueprint(classes_blueprint, url_prefix='/classes')
+    app.register_blueprint(classes_blueprint, url_prefix=URL_PREFIX)
 
     # 附加路由和自定义的错误页面
 
