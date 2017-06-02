@@ -1,14 +1,6 @@
 #-*- coding: UTF-8 -*-
 from flask import request, jsonify
 from app.users import users
-from app.database import db
-
-
-class Teacher(db.Document):
-    name = db.StringField()
-    profile = db.StringField()
-    img = db.StringField()
-
 
 @users.route('/api/v1/teacher', methods=['GET'])
 def getTeacher():

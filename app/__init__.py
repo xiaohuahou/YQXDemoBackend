@@ -1,14 +1,14 @@
 # coding=utf-8
 from flask import Flask
 from config import config
-from database import db
+from database import init_db
 
 def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
 
-    db.init_app(app)
+    init_db(config[config_name])
 
     # 注册蓝本
     # 增加auth蓝本
