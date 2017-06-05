@@ -4,7 +4,7 @@ from config import config
 from database import init_db
 
 def create_app(config_name):
-    app = Flask(__name__)
+    app = Flask(__name__ + config[config_name].MONGODB_DB)
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
 

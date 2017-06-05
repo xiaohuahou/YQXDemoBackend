@@ -17,5 +17,13 @@ def test():
     tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner(verbosity=2).run(tests)
 
+@manager.command
+def utils():
+    """use utils to prepare some data in dev"""
+    assert 'dev' in app.name
+    import utils
+    utils.clearAll()
+    utils.addDummyClasses()
+
 if __name__ == '__main__':
     manager.run()
