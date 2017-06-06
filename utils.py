@@ -10,11 +10,26 @@ def clearAll():
 
 def addDummyClasses(num=10):
     """add some dummy classes to the database"""
-    print 'adding ', str(num), ' dummy class to the database.'
+    print 'adding ', str(num), ' dummy classes to the database.'
     ct = 0
     while ct < 10:
         name = 'Dummy Class ' + str(ct)
         _tid = 'Dummy Teacher Id ' + str(ct)
-        db.classes.insert_one({'name': name, '_tid': _tid})
-        ct = ct +1
+        db.classes.insert_one({
+            'name': name,
+            '_tid': _tid
+        })
+        ct = ct + 1
+    print 'done.'
+
+def addDummyTeachers(num=10):
+    """add some dummy teachers to the database"""
+    print 'adding ', str(num), ' dummy teachers to the database.'
+    ct = 0
+    while ct < 10:
+        name = 'Dummy Teacher ' + str(ct)
+        db.teachers.insert_one({
+            'name': name
+        })
+        ct = ct + 1
     print 'done.'

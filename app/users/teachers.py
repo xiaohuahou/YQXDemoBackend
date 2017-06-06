@@ -6,7 +6,7 @@ from app.database import db
 from app.users import users
 
 parser = reqparse.RequestParser()
-parser.add_argument('name', required=True, help='Name cannot be blank')
+parser.add_argument('name')
 
 
 @users.route('/teachers', methods=['GET'])
@@ -22,6 +22,7 @@ def getTeacher():
 def addTeacher():
     args = parser.parse_args()
     name = args.get('name')
+
     if name:
         rid = db.teachers.insert_one({
             'name': name
@@ -40,6 +41,7 @@ def addTeacher():
 def editTeacher(teacher_id):
     args = parser.parse_args()
     name = args.get('name')
+
     if args.get('name'):
         db.teachers.update_one({'_id': ObjectId(teacher_id)},
                                {'$set': {'name': name}})
