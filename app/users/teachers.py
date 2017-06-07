@@ -11,7 +11,7 @@ parser.add_argument('_tid')
 
 
 @users.route('/teachers', methods=['GET'])
-def getTeacher():
+def getTeacherAll():
     res = [t for t in db.teachers.find({}, {'_id': False})]
     return jsonify({
         'result': 'success',
