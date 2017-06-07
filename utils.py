@@ -28,8 +28,10 @@ def addDummyTeachers(num=10):
     ct = 0
     while ct < 10:
         name = 'Dummy Teacher ' + str(ct)
+        _tid = 'Dummy Teacher Id ' + str(ct)
         db.teachers.insert_one({
-            'name': name
+            'name': name,
+            '_tid': _tid
         })
         ct = ct + 1
     print 'done.'

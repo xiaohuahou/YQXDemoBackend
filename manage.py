@@ -24,6 +24,7 @@ def utils():
     import utils
     utils.clearAll()
     utils.addDummyClasses()
+    utils.addDummyTeachers()
 
 if __name__ == '__main__':
     manager.run()
