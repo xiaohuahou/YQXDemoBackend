@@ -15,7 +15,7 @@ def addDummyClasses(num=10):
     while ct < 10:
         name = 'Dummy Class ' + str(ct)
         _tid = 'Dummy Teacher Id ' + str(ct)
-        db.classes.insert_one({
+        db.classes.insert({
             'name': name,
             '_tid': _tid
         })

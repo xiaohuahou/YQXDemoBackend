@@ -1,8 +1,10 @@
 import os
 from flask_script import Manager, Shell
 from app import create_app
+#from flask_cors import CORS, cross_origin
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
+#CORS(app)
 manager = Manager(app)
 
 def make_shell_context():

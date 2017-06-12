@@ -9,7 +9,7 @@ parser = reqparse.RequestParser()
 parser.add_argument('name')
 
 
-@users.route('/teachers', methods=['GET'])
+@users.route('/teacher', methods=['GET'])
 def getTeacher():
     res = [t for t in db.teachers.find({}, {'_id': False})]
     return jsonify({
@@ -18,7 +18,7 @@ def getTeacher():
     })
 
 
-@users.route('/teachers', methods=['POST'])
+@users.route('/teacher', methods=['POST'])
 def addTeacher():
     args = parser.parse_args()
     name = args.get('name')
@@ -37,7 +37,7 @@ def addTeacher():
         })
 
 
-@users.route('/teachers/<string:teacher_id>', methods=['PUT'])
+@users.route('/teacher/<string:teacher_id>', methods=['PUT'])
 def editTeacher(teacher_id):
     args = parser.parse_args()
     name = args.get('name')
